@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koza DAO Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-icon">🦋</div>
+                    <div class="logo-text">
+                        <h1 class="brand-name">Koza DAO</h1>
+                        <p class="brand-subtitle">Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div id="loginForm" class="login-container">
+                <form id="adminLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="adminPassword" class="form-label">🔑 Admin Şifresi</label>
+                        <input type="password" id="adminPassword" name="password" class="form-input" placeholder="Şifrenizi girin..." required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">🚪 Giriş Yap</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="adminPanel" class="admin-panel" style="display: none;">
+                <div class="admin-header">
+                    <h2>📝 Yıldönümü Anıları</h2>
+                    <div class="admin-actions">
+                        <button id="refreshBtn" class="action-btn">🔄 Yenile</button>
+                        <button id="exportBtn" class="action-btn">📤 Dışa Aktar</button>
+                        <button id="clearAllBtn" class="action-btn danger">🗑️ Tümünü Sil</button>
+                    </div>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="totalNotes">0</div>
+                            <div class="stat-label">Toplam Anı</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="uniqueUsers">0</div>
+                            <div class="stat-label">Katılımcı</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="todayNotes">0</div>
+                            <div class="stat-label">Bugünkü Anılar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notes-container" id="notesContainer">
+                </div>
+                <div class="logout-section">
+                    <a href="index.html" class="home-btn">🏠 Ana Sayfa</a>
+                    <button id="logoutBtn" class="logout-btn">🚪 Çıkış Yap</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="env-config.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

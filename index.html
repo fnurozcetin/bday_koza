@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koza DAO Anı Defteri</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-icon"><img src="public/logo/Logo-black2.png" alt="Koza DAO Logo"></div>
+                        <div class="logo-text">
+                            <h1 class="brand-name">Koza DAO</h1>
+                            <p class="brand-subtitle">1. Yıldönümü</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="sticker sticker-1"><img src="public/sticker/IMG_1397.PNG" alt="Sticker 1"></div>
+        <div class="sticker sticker-2"><img src="public/sticker/IMG_1399.PNG" alt="Sticker 2"></div>
+        <div class="sticker sticker-3"><img src="public/sticker/IMG_1401.PNG" alt="Sticker 3"></div>
+        <div class="sticker sticker-4"><img src="public/sticker/IMG_1403.PNG" alt="Sticker 4"></div>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h2 class="welcome-title">Anılarınızı Paylaşın</h2>
+                <p class="welcome-description">
+                    Koza DAO'nun bu özel gününde, birlikte geçirdiğimiz güzel anıları 
+                    ve geleceğe dair düşüncelerinizi bizimle paylaşın.
+                </p>
+            </div>
+
+            <div class="note-form-container">
+                <form id="noteForm" class="note-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">👤 Adınız</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="İsminizi yazın..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note" class="form-label">💭 Anınız</label>
+                        <textarea id="note" name="note" class="form-textarea" placeholder="Koza DAO ile ilgili anılarınızı, düşüncelerinizi veya dileklerinizi paylaşın..." maxlength="500" required></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/500 karakter
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Kaydet</span>
+                        <div class="btn-loading" style="display: none;">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                <div class="success-content">
+                    <div class="success-icon">🎉</div>
+                    <h3>Notunuz başarıyla kaydedildi!</h3>
+                </div>
+            </div>
+
+            <!-- POAP Modal -->
+            <div class="poap-modal" id="poapModal" style="display: none;">
+                <div class="poap-modal-content">
+                    <button class="modal-close" id="modalClose">&times;</button>
+                    <div class="poap-modal-body">
+                        <div class="poap-icon">🏅</div>
+                        <h2 class="poap-title">1. Yıldönümü POAP'ı</h2>
+                        <p class="poap-description">
+                            Notunuzu yazıp paylaştığınız için teşekkürler! 
+                            <br><br>
+                            Koza DAO'nun 1. yıldönümü özel POAP'ını almak ister misiniz?
+                        </p>
+                        <form id="poapForm" class="poap-form">
+                            <div class="form-group">
+                                <label for="walletAddress" class="form-label">💰 EVM Cüzdan Adresi <span class="optional">(isteğe bağlı)</span></label>
+                                <input type="text" id="walletAddress" name="walletAddress" class="form-input" placeholder="0x... ile başlayan Ethereum/EVM cüzdan adresinizi girin">
+                                <div class="wallet-hint">Boş bırakabilirsiniz, bu alan isteğe bağlıdır.</div>
+                            </div>
+                            <div class="poap-buttons">
+                                <button type="submit" class="btn-primary">
+                                    <span class="btn-text">Devam Et</span>
+                                    <div class="btn-loading" style="display: none;">
+                                        <div class="spinner"></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn-secondary" id="skipPoap">Şimdi Değil</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-link">
+                <a href="admin.html" class="admin-btn">🔐 Admin Paneli</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">Koza DAO - Merkeziyetsiz Geleceğe Kanatlarımızı Açıyoruz</p>
+                <p class="footer-date">2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="env-config.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
