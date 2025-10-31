@@ -28,11 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
     noteForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        const name = document.getElementById('name').value.trim();
+        const nameInput = document.getElementById('name');
+        const name = nameInput.value.trim();
         const note = noteTextarea.value.trim();
         
-        if (!name || !note) {
-            showNotification('Lütfen tüm alanları doldurun!', 'error');
+        // İsim alanı zorunlu kontrolü
+        if (!name) {
+            nameInput.focus();
+            nameInput.style.borderColor = '#e17055';
+            showNotification('Lütfen isminizi girin!', 'error');
+            setTimeout(() => {
+                nameInput.style.borderColor = '';
+            }, 2000);
+            return;
+        }
+        
+        if (!note) {
+            noteTextarea.focus();
+            noteTextarea.style.borderColor = '#e17055';
+            showNotification('Lütfen anınızı yazın!', 'error');
+            setTimeout(() => {
+                noteTextarea.style.borderColor = '';
+            }, 2000);
             return;
         }
         
