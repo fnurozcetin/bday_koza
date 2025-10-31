@@ -157,35 +157,51 @@ body {
 }
 
 .sticker-1 {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     top: 10%;
-    right: 5%;
+    right: 10%;
     animation: float-sticker-1 6s ease-in-out infinite;
 }
 
 .sticker-2 {
-    width: 100px;
-    height: 100px;
-    top: 25%;
-    left: 3%;
+    width: 130px;
+    height: 130px;
+    top: 18%;
+    left: 8%;
     animation: float-sticker-2 7s ease-in-out infinite;
 }
 
 .sticker-3 {
-    width: 110px;
-    height: 110px;
-    bottom: 25%;
-    right: 2%;
+    width: 135px;
+    height: 135px;
+    bottom: 20%;
+    right: 8%;
     animation: float-sticker-3 8s ease-in-out infinite;
 }
 
 .sticker-4 {
-    width: 95px;
-    height: 95px;
+    width: 125px;
+    height: 125px;
     bottom: 10%;
-    left: 5%;
+    left: 10%;
     animation: float-sticker-4 9s ease-in-out infinite;
+}
+
+.sticker-5 {
+    width: 120px;
+    height: 120px;
+    top: 45%;
+    left: 8%;
+    animation: float-sticker-5 7.5s ease-in-out infinite;
+}
+
+.sticker-6 {
+    width: 115px;
+    height: 115px;
+    top: 58%;
+    right: 10%;
+    animation: float-sticker-6 8.5s ease-in-out infinite;
 }
 
 @keyframes float-sticker-1 {
@@ -221,6 +237,27 @@ body {
     }
     50% { 
         transform: translateX(15px) rotateY(180deg);
+    }
+}
+
+@keyframes float-sticker-5 {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    33% { 
+        transform: translateY(-12px) translateX(8px) rotate(3deg);
+    }
+    66% { 
+        transform: translateY(8px) translateX(-5px) rotate(-3deg);
+    }
+}
+
+@keyframes float-sticker-6 {
+    0%, 100% { 
+        transform: translateY(0px) rotateZ(0deg) scale(1);
+    }
+    50% { 
+        transform: translateY(-18px) rotateZ(10deg) scale(1.05);
     }
 }
 
@@ -477,7 +514,11 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 10px;
+        padding: 0 12px;
+    }
+    
+    body {
+        font-size: 14px;
     }
     
     .header {
@@ -486,133 +527,330 @@ body {
     }
     
     .logo-container {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
     
     .logo {
-        gap: 10px;
+        gap: 12px;
+        flex-direction: row;
+        text-align: left;
     }
     
     .logo-icon {
         font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .logo-icon img {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        display: block;
+    }
+    
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.85rem;
     }
     
     .sticker {
-        width: 40px;
-        height: 40px;
+        opacity: 0.1;
     }
     
-    @keyframes orbit1 {
-        from {
-            transform: rotate(0deg) translateX(65px) rotate(-0deg);
-        }
-        to {
-            transform: rotate(360deg) translateX(65px) rotate(-360deg);
-        }
+    .sticker-1 {
+        width: 70px;
+        height: 70px;
+        top: 8%;
+        right: 5%;
     }
     
-    @keyframes orbit2 {
-        from {
-            transform: rotate(90deg) translateX(65px) rotate(-90deg);
-        }
-        to {
-            transform: rotate(450deg) translateX(65px) rotate(-450deg);
-        }
+    .sticker-2 {
+        width: 65px;
+        height: 65px;
+        top: 15%;
+        left: 5%;
     }
     
-    @keyframes orbit3 {
-        from {
-            transform: rotate(180deg) translateX(65px) rotate(-180deg);
-        }
-        to {
-            transform: rotate(540deg) translateX(65px) rotate(-540deg);
-        }
+    .sticker-3 {
+        width: 68px;
+        height: 68px;
+        bottom: 18%;
+        right: 4%;
     }
     
-    @keyframes orbit4 {
-        from {
-            transform: rotate(270deg) translateX(65px) rotate(-270deg);
-        }
-        to {
-            transform: rotate(630deg) translateX(65px) rotate(-630deg);
-        }
+    .sticker-4 {
+        width: 62px;
+        height: 62px;
+        bottom: 8%;
+        left: 5%;
+    }
+    
+    .sticker-5 {
+        width: 60px;
+        height: 60px;
+        top: 45%;
+        left: 4%;
+    }
+    
+    .sticker-6 {
+        width: 58px;
+        height: 58px;
+        top: 58%;
+        right: 5%;
+    }
+    
+    .main-content {
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .welcome-section {
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .welcome-description {
+        font-size: 0.9rem;
+        padding: 0 5px;
+    }
+    
+    .note-form-container {
+        padding: 20px;
+        border-radius: 16px;
+        margin: 0 5px;
+    }
+    
+    .note-form {
+        gap: 16px;
+    }
+    
+    .form-label {
+        font-size: 1rem;
+    }
+    
+    .form-input, .form-textarea {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .form-textarea {
+        min-height: 100px;
+    }
+    
+    .submit-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+    
+    .success-message {
+        padding: 20px;
+        margin: 0 5px;
+    }
+    
+    .success-icon {
+        font-size: 3rem;
+    }
+    
+    .success-message h3 {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 8px;
+        padding: 0 10px;
+    }
+    
+    body {
+        font-size: 13px;
     }
     
     .header {
-        padding: 10px 0;
-        margin-bottom: 10px;
+        padding: 12px 0;
+        margin-bottom: 12px;
+    }
+    
+    .logo-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .logo {
+        gap: 10px;
+        flex-direction: row;
+        text-align: left;
     }
     
     .logo-icon {
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo-icon img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        display: block;
     }
     
     .brand-name {
         font-size: 1.3rem;
+        line-height: 1.1;
     }
     
     .brand-subtitle {
         font-size: 0.75rem;
     }
     
+    .sticker {
+        opacity: 0.08; /* Çok küçük ekranlarda daha hafif göster */
+    }
+    
+    .sticker-1 {
+        width: 50px;
+        height: 50px;
+        top: 5%;
+        right: 3%;
+    }
+    
+    .sticker-2 {
+        width: 48px;
+        height: 48px;
+        top: 12%;
+        left: 3%;
+    }
+    
+    .sticker-3 {
+        width: 49px;
+        height: 49px;
+        bottom: 15%;
+        right: 3%;
+    }
+    
+    .sticker-4 {
+        width: 47px;
+        height: 47px;
+        bottom: 5%;
+        left: 3%;
+    }
+    
+    .sticker-5 {
+        width: 46px;
+        height: 46px;
+        top: 45%;
+        left: 2%;
+    }
+    
+    .sticker-6 {
+        width: 45px;
+        height: 45px;
+        top: 58%;
+        right: 3%;
+    }
+    
     .main-content {
-        gap: 10px;
-        padding: 0 3px;
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .welcome-section {
+        padding: 0 5px;
     }
     
     .welcome-title {
         font-size: 1.3rem;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        line-height: 1.2;
     }
     
     .welcome-description {
         font-size: 0.85rem;
+        line-height: 1.4;
     }
     
     .note-form-container {
-        padding: 15px;
+        padding: 18px 15px;
+        border-radius: 14px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
     
     .note-form {
-        gap: 12px;
+        gap: 14px;
+    }
+    
+    .form-group {
+        gap: 6px;
+    }
+    
+    .form-label {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
     }
     
     .form-input, .form-textarea {
-        padding: 10px 14px;
-        font-size: 0.85rem;
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        border-radius: 10px;
     }
     
     .form-textarea {
-        min-height: 80px;
+        min-height: 100px;
+    }
+    
+    .char-counter {
+        font-size: 0.85rem;
+        margin-top: 6px;
     }
     
     .submit-btn {
-        padding: 12px 24px;
+        padding: 14px 24px;
         font-size: 0.9rem;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 8px;
     }
     
     .success-message {
-        padding: 15px;
+        padding: 20px 15px;
+        border-radius: 16px;
+        margin: 0;
+    }
+    
+    .success-icon {
+        font-size: 2.5rem;
+    }
+    
+    .success-message h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
     }
     
     .footer {
-        padding: 10px 0;
+        padding: 15px 0;
+        margin-top: 20px;
+    }
+    
+    .footer-content {
+        gap: 8px;
     }
     
     .footer-text {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        padding: 0 10px;
+        line-height: 1.4;
     }
     
     .footer-date {
@@ -850,33 +1088,113 @@ body {
     background: var(--gray-100);
 }
 
+/* POAP Modal Responsive */
+@media (max-width: 768px) {
+    .poap-modal-content {
+        max-width: 90%;
+        border-radius: 20px;
+    }
+    
+    .poap-modal-body {
+        padding: 30px 20px;
+    }
+    
+    .poap-icon {
+        font-size: 3rem;
+    }
+    
+    .poap-title {
+        font-size: 1.6rem;
+    }
+    
+    .poap-description {
+        font-size: 0.95rem;
+    }
+    
+    .poap-form {
+        gap: 16px;
+    }
+    
+    .wallet-hint {
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 480px) {
     .poap-modal-content {
         width: 95%;
+        max-width: 95%;
+        border-radius: 16px;
     }
 
     .poap-modal-body {
-        padding: 30px 20px;
+        padding: 25px 18px;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.8rem;
     }
 
     .poap-icon {
         font-size: 2.5rem;
+        margin-bottom: 15px;
     }
 
     .poap-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
     }
 
     .poap-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .poap-form {
+        gap: 14px;
+    }
+    
+    .form-label {
         font-size: 0.95rem;
+    }
+    
+    .form-input {
+        padding: 12px 14px;
+        font-size: 0.9rem;
     }
 
     .poap-buttons {
         gap: 10px;
+        margin-top: 20px;
     }
 
     .btn-primary, .btn-secondary {
-        padding: 12px 24px;
+        padding: 12px 20px;
         font-size: 0.9rem;
+        width: 100%;
+    }
+    
+    .wallet-hint {
+        font-size: 0.75rem;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 481px) and (max-width: 768px) {
+    .logo-container {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .sticker-1,
+    .sticker-2,
+    .sticker-3,
+    .sticker-4 {
+        opacity: 0.12;
     }
 }
